@@ -1,1 +1,13 @@
-ping -c 5 8.8.8.8
+#!/bin/bash
+
+# ping: C'est la commande utilisée pour envoyer des paquets de données à une adresse IP spécifiée pour vérifier la connectivité réseau.
+# "$1" : C'est le premier argument passé au script. En Bash, faisant référence au premier argument passé à un script ou une fonction.
+# En Bash, les instructions if sont délimitées par then pour indiquer le début if, et fi pour indiquer la fin  
+
+# Vérifie s'il y a un argument
+if [ $# -eq 0 ]; then  # $#: C'est une variable spéciale en Bash qui contient le nombre d'arguments passés au script.
+    echo "Usage: $0 {IP_ADDRESS}"
+else
+    # Envoie cinq paquets de ping à l'adresse IP spécifiée
+    ping -c 5 "$1"  
+fi
